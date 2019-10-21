@@ -20,6 +20,14 @@ class _HomeState extends State<Home> {
     appBar: AppBar(
       centerTitle: true,
       title: Text('Dota Heroes'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {
+            print("Icon pressed");
+          },
+        )
+      ],
     ),
     body: ListView.builder(
       itemExtent: 100.0,
