@@ -1,3 +1,4 @@
+import 'package:dota_app/model/attr_color_helper.dart';
 import 'package:flutter/material.dart';
 import '../model/dota_hero.dart';
 import '../screens/hero-details/hero_details.dart';
@@ -10,12 +11,16 @@ class DotaHeroItem extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         children: <Widget>[
           ListTile(
-            title: Text(_dotaHero.name),
+            title: Text(
+              _dotaHero.name,
+              style: TextStyle(color: AttrColorHelper.getValue(_dotaHero.attr)),
+            ),
             subtitle: Text("Type: " + _dotaHero.attr),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DotaHeroDetails(dotaHero:  _dotaHero)),
+                MaterialPageRoute(
+                    builder: (context) => DotaHeroDetails(dotaHero: _dotaHero)),
               );
             },
             leading: Container(
